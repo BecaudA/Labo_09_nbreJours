@@ -22,6 +22,9 @@ using namespace std;
 int main() {
 
    // Ce programme ...
+   cout << "test";
+   string testosama = saisieDate('-');
+   cout << testosama;
    // Prendre Date
    // Vérifier Date
    // Calcul différence
