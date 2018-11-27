@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/Labo_09_Becaud_Egremy.cpp
+dates.h
+C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/dates.h
+iostream
+-
+cstdlib
+-
+
+C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/dates.h
+string
+-
+
