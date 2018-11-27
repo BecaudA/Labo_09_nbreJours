@@ -149,6 +149,33 @@ Labo_09_Becaud_Egremy.cpp.s:
 	$(MAKE) -f CMakeFiles\Labo_09_nbreJours.dir\build.make CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.s
 .PHONY : Labo_09_Becaud_Egremy.cpp.s
 
+dates.obj: dates.cpp.obj
+
+.PHONY : dates.obj
+
+# target to build an object file
+dates.cpp.obj:
+	$(MAKE) -f CMakeFiles\Labo_09_nbreJours.dir\build.make CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.obj
+.PHONY : dates.cpp.obj
+
+dates.i: dates.cpp.i
+
+.PHONY : dates.i
+
+# target to preprocess a source file
+dates.cpp.i:
+	$(MAKE) -f CMakeFiles\Labo_09_nbreJours.dir\build.make CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.i
+.PHONY : dates.cpp.i
+
+dates.s: dates.cpp.s
+
+.PHONY : dates.s
+
+# target to generate assembly for a file
+dates.cpp.s:
+	$(MAKE) -f CMakeFiles\Labo_09_nbreJours.dir\build.make CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.s
+.PHONY : dates.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,6 +188,9 @@ help:
 	@echo ... Labo_09_Becaud_Egremy.obj
 	@echo ... Labo_09_Becaud_Egremy.i
 	@echo ... Labo_09_Becaud_Egremy.s
+	@echo ... dates.obj
+	@echo ... dates.i
+	@echo ... dates.s
 .PHONY : help
 
 

@@ -12,6 +12,7 @@
  Compilateur : MinGW-g++ 6.3.0
  -----------------------------------------------------------------------------------
 */
+#include "dates.h"
 
 #include <iostream>
 #include <cstdlib>
@@ -20,6 +21,13 @@ using namespace std;
 
 int main() {
 
+   // Ce programme ...
+   // Prendre Date
+   // Vérifier Date
+   // Calcul différence
+   // Afficher résultat
+   // Recommencer ?
+   // Fin du programme
 
    return EXIT_SUCCESS;
 }
