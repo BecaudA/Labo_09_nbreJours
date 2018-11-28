@@ -5,6 +5,6 @@
 
 
 
-std::string saisieDate(const char& car);
+bool saisieDate(unsigned int& jours, unsigned int& mois, unsigned int& annee, const char& car);
 
 #endif //LABO_09_NBREJOURS_DATES_H

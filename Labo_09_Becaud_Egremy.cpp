@@ -21,10 +21,17 @@ using namespace std;
 
 int main() {
 
+   const char carSeparation = '-';
+
+   unsigned  int jours1 = 0,
+                mois1  = 0,
+                annee1 = 0;
+
    // Ce programme ...
-   cout << "test";
-   string testosama = saisieDate('-');
-   cout << testosama;
+   cout << "Saisie date : ";
+   saisieDate(jours1, mois1, annee1, carSeparation);
+   cout << endl << jours1 << "|" << mois1 << "|" << annee1 << endl;
+
    // Prendre Date
    // Vérifier Date
    // Calcul différence
