@@ -74,7 +74,7 @@ bool estBissextile(const int& ANNEE){
 bool dateEstComprise(const int DATE_MIN[3], const int DATE_MAX[3], const int DATE[3]){
    if(DATE[0] >= DATE_MIN[0] and DATE[0] <= DATE_MAX[0]){
       if(DATE[1] >= DATE_MIN[1] and DATE[1] <= DATE_MAX[1]){
-            return DATE[2] >= DATE_MIN[2] and DATE[2] <= DATE_MAX[1];
+            return (DATE[2] >= DATE_MIN[2] and DATE[2] <= DATE_MAX[1]);
       } else{
          return false;
       }

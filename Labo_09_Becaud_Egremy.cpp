@@ -22,7 +22,10 @@ int main() {
 
    const char   carSeparation = '-';
 
-   int date1[3]      = {15, 11, 2101},
+   const int DATE_MIN[] = {1, 1, 1900},
+             DATE_MAX[] = {31, 12, 2200};
+
+   int date1[3]      = {15, 11, 2201},
        date2[3]      = {28, 02, 1915};
 
    // Ce programme ...
@@ -33,8 +36,13 @@ int main() {
    //saisieDate(date2[0], date2[1], date2[2], carSeparation);
    cout << endl << date2[0] << "|" << date2[1] << "|" << date2[2] << endl;
 
+   cout << endl << "Validations : ";
    cout << endl << validationDate(date1);
    cout << endl << validationDate(date2);
+
+   cout << endl << "Verification intervalle : ";
+   cout << endl << dateEstComprise(DATE_MIN, DATE_MAX, date1);
+   cout << endl << dateEstComprise(DATE_MIN, DATE_MAX, date2);
 
    // Prendre Date
    // Vérifier Date
