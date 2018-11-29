@@ -1,16 +1,15 @@
-#include <string>
-
 #ifndef LABO_09_NBREJOURS_DATES_H
 #define LABO_09_NBREJOURS_DATES_H
 
 
+bool saisieDate(int& jours, int& mois, int& annee, const char& CAR);
 
-bool saisieDate(int& jours, int& mois, int& annee, const char& car);
+bool validationDate(const int DATE[3]);
 
-bool validationDate(int date[3]);
+bool estBissextile(const int& ANNEE);
+S
+int nbJoursMax(const int& MOIS, const int& ANNEE);
 
-bool estBissextile(const int& annee);
-
-int nbJoursMax(const int& mois, const int& annee)
+bool dateEstComprise(const int DATE_MIN[3], const int DATE_MAX[3], const int DATE[3]);
 
 #endif //LABO_09_NBREJOURS_DATES_H

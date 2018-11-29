@@ -22,8 +22,8 @@ int main() {
 
    const char   carSeparation = '-';
 
-   int date1[3]      = {15, 13, 2015},
-       date2[3]      = {31, 05, 1916};
+   int date1[3]      = {15, 11, 2101},
+       date2[3]      = {28, 02, 1915};
 
    // Ce programme ...
    cout << "Saisie date 1 : ";
@@ -33,7 +33,8 @@ int main() {
    //saisieDate(date2[0], date2[1], date2[2], carSeparation);
    cout << endl << date2[0] << "|" << date2[1] << "|" << date2[2] << endl;
 
-   validationDate(date1);
+   cout << endl << validationDate(date1);
+   cout << endl << validationDate(date2);
 
    // Prendre Date
    // Vérifier Date
