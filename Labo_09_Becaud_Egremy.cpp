@@ -13,7 +13,6 @@
  -----------------------------------------------------------------------------------
 */
 #include "dates.h"
-
 #include <iostream>
 #include <cstdlib>
 
@@ -21,16 +20,15 @@ using namespace std;
 
 int main() {
 
-   const char carSeparation = '-';
+   const char   carSeparation = '-';
 
-   unsigned  int jours1 = 0,
-                mois1  = 0,
-                annee1 = 0;
+   unsigned int date1[3]      = {},
+                date2[3]      = {};
 
    // Ce programme ...
    cout << "Saisie date : ";
-   saisieDate(jours1, mois1, annee1, carSeparation);
-   cout << endl << jours1 << "|" << mois1 << "|" << annee1 << endl;
+   saisieDate(date1[0], date1[1], date1[2], carSeparation);
+   cout << endl << date1[0] << "|" << date1[1] << "|" << date1[2] << endl;
 
    // Prendre Date
    // Vérifier Date
