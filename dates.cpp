@@ -30,9 +30,6 @@ bool saisieDate(int& jours, int& mois, int& annee, const char& CAR){
          cin.clear();
       }
    }while(!erreur);
-
-
-
 }
 
 bool validationDate(const int DATE[3]){
@@ -43,7 +40,9 @@ bool validationDate(const int DATE[3]){
    return !(DATE[1] < MOIS_MIN or DATE[1] > MOIS_MAX or DATE[0] < JOUR_MIN or DATE[0] > nbJoursMax(DATE[1], DATE[2]));
 }
 
+//Renvoie le nombre de jours max pour un mois donné d'une année donnée
 int nbJoursMax(const int& MOIS, const int& ANNEE){
+
    const int NB_JOURS_FEVRIER_BISSEXTILE        = 29,
              NB_JOURS_FEVRIER_NON_BISSEXTILE    = 28,
              NB_JOURS_MAX                       = 31,
@@ -63,8 +62,6 @@ int nbJoursMax(const int& MOIS, const int& ANNEE){
       //nbJours vaut soit 30 soit 31
       return NB_JOURS_MAX - (MOIS - 1)% 7 % 2;
    }
-
-
 }
 
 bool estBissextile(const int& ANNEE){
@@ -107,4 +104,37 @@ bool plusGrandeOuEgale(const int DATE[3], const int DATE_REF[3]){
    } else {
       return false;
    }
+}
+
+//Renvoie le nombre de jours qui sépare 2 dates
+int differenceDate(const int DATE1[3], const int DATE2[3]){
+   const int NB_JOURS_ANNEE_BISSEXTILE     = 366,
+             NB_JOURS_ANNEE_NON_BISSEXTILE = 365;
+
+   int anneeIntermediaire     = DATE1[2],
+       nbAnneeNonBissextile = 0,
+       nbAnneeBissextiles   = 0,
+       nbJoursTotal           = 0;
+
+   // Pas sûr que ce soit 1, peut être 2
+   if((DATE2[2] - DATE1[2] >= 1)){
+      if(!(estBissextile(anneeIntermediaire))){
+         do{
+            nbAnneeNonBissextile++;
+            anneeIntermediaire++;
+         }while(!(estBissextile(anneeIntermediaire)));
+      }
+      nbAnneeBissextiles   += (DATE2[2] - anneeIntermediaire) / 4;
+      nbAnneeNonBissextile += DATE2[2] - anneeIntermediaire - nbAnneeBissextiles;
+
+      nbJoursTotal += nbAnneeBissextiles * NB_JOURS_ANNEE_BISSEXTILE + nbAnneeNonBissextile * NB_JOURS_ANNEE_NON_BISSEXTILE;
+   }
+
+
+
+
+
+
+
+
 }

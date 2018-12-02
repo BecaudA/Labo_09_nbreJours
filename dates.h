@@ -16,4 +16,6 @@ bool plusPetiteOuEgale(const int DATE[3], const int DATE_REF[3]);
 
 bool plusGrandeOuEgale(const int DATE[3], const int DATE_REF[3]);
 
+int differenceDate(const int DATE1[3], const int DATE2[3]);
+
 #endif //LABO_09_NBREJOURS_DATES_H

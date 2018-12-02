@@ -36,13 +36,9 @@ int main() {
    //saisieDate(date2[0], date2[1], date2[2], carSeparation);
    cout << endl << date2[0] << "|" << date2[1] << "|" << date2[2] << endl;
 
-   cout << endl << "Validations : ";
-   cout << endl << validationDate(date1);
-   cout << endl << validationDate(date2);
-
-   cout << endl << "Verification intervalle : ";
-   cout << endl << dateEstComprise(DATE_MIN, DATE_MAX, date1);
-   cout << endl << dateEstComprise(DATE_MIN, DATE_MAX, date2);
+   cout << "Verification intervalle : " << endl;
+   cout << dateEstComprise(DATE_MIN, DATE_MAX, date1) << endl;
+   cout << dateEstComprise(DATE_MIN, DATE_MAX, date2) << endl;
 
    // Prendre Date
    // Vérifier Date
