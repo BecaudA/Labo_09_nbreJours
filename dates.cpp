@@ -72,18 +72,39 @@ bool estBissextile(const int& ANNEE){
 }
 
 bool dateEstComprise(const int DATE_MIN[3], const int DATE_MAX[3], const int DATE[3]){
-   if(validationDate(DATE)){
-      if(DATE[0] >= DATE_MIN[0] and DATE[0] <= DATE_MAX[0]){
-         if(DATE[1] >= DATE_MIN[1] and DATE[1] <= DATE_MAX[1]){
-            return (DATE[2] >= DATE_MIN[2] and DATE[2] <= DATE_MAX[1]);
-         } else{
-            return false;
-         }
-      } else{
+   if(validationDate(DATE)) {
+      return (plusGrandeOuEgale(DATE, DATE_MIN) and plusPetiteOuEgale(DATE, DATE_MAX));
+   }
+}
+
+bool plusPetiteOuEgale(const int DATE[3], const int DATE_REF[3]){
+   if(DATE[2] < DATE_REF[2]){
+      return true;
+   } else if(DATE[2] == DATE_REF[2]){
+      if(DATE[1] < DATE_REF[1]){
+         return true;
+      } else if(DATE[1] == DATE_REF[1]){
+         return DATE[0] <= DATE_REF[0];
+      } else {
          return false;
       }
-   } else{
+   } else {
       return false;
    }
+}
 
+bool plusGrandeOuEgale(const int DATE[3], const int DATE_REF[3]){
+   if(DATE[2] > DATE_REF[2]){
+      return true;
+   } else if(DATE[2] == DATE_REF[2]){
+      if(DATE[1] > DATE_REF[1]){
+         return true;
+      } else if(DATE[1] == DATE_REF[1]){
+         return DATE[0] >= DATE_REF[0];
+      } else {
+         return false;
+      }
+   } else {
+      return false;
+   }
 }

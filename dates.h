@@ -12,4 +12,8 @@ int nbJoursMax(const int& MOIS, const int& ANNEE);
 
 bool dateEstComprise(const int DATE_MIN[3], const int DATE_MAX[3], const int DATE[3]);
 
+bool plusPetiteOuEgale(const int DATE[3], const int DATE_REF[3]);
+
+bool plusGrandeOuEgale(const int DATE[3], const int DATE_REF[3]);
+
 #endif //LABO_09_NBREJOURS_DATES_H

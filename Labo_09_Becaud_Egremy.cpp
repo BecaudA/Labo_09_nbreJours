@@ -26,7 +26,7 @@ int main() {
              DATE_MAX[] = {31, 12, 2200};
 
    int date1[3]      = {15, 11, 2201},
-       date2[3]      = {29, 02, 1915};
+       date2[3]      = {28, 02, 1915};
 
    // Ce programme ...
    cout << "Saisie date 1 : ";
