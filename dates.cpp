@@ -11,25 +11,41 @@ bool saisieDate(int& jours, int& mois, int& annee, const char& CAR){
 
    bool erreur;
 
-   do{
+   int date[3];
+
+   // Boucle (1) de la saisie de la date
+   do {
+      cout << "saisir la date : ";
+
+      // Reset l'erreur
       erreur = false;
 
-      cout << endl << "Saisie Date : ";
-      cin >> jours;
-      cin.ignore(numeric_limits<streamsize>::max(),CAR);
+      // Boucle (2) pour entrer jour mois annee
+      for (unsigned i = 0; i < sizeof(date) / sizeof(int); ++i) {
+         cin >> date[i];
 
-      cin >> mois;
-      cin.ignore(numeric_limits<streamsize>::max(),CAR);
+         // Test de l'erreur du cin
+         if (cin.fail()) {
+            cin.clear();
+            erreur = true;
+            cout << endl << "Une erreur est survenue lors de la lecture de la date donnee." << endl;
+            cin.ignore(numeric_limits<int>::max(),'\n');
 
-      cin >> annee;
-      cin.ignore(numeric_limits<streamsize>::max(),'\n');
-
-
-      if(cin.fail()){
-         erreur = cin.fail();
-         cin.clear();
+            // Si il y a eu une erreur on quitte la boucle (2) jour mois annee
+            break;
+         } else if(i != sizeof(date) / sizeof(int) - 1){
+            // Vide le buffer jusqu'au caractère choisie
+            cin.ignore(numeric_limits<int>::max(),CAR);
+         }
       }
-   }while(!erreur);
+   } while(erreur);
+
+   // retourne la date via les référencement
+   jours = date[0];
+   mois  = date[1];
+   annee = date[2];
+
+   return true;
 }
 
 bool validationDate(const int DATE[3]){
@@ -129,12 +145,4 @@ int differenceDate(const int DATE1[3], const int DATE2[3]){
 
       nbJoursTotal += nbAnneeBissextiles * NB_JOURS_ANNEE_BISSEXTILE + nbAnneeNonBissextile * NB_JOURS_ANNEE_NON_BISSEXTILE;
    }
-
-
-
-
-
-
-
-
 }
