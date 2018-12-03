@@ -28,13 +28,11 @@ int main() {
    int date1[3]      = {15, 11, 2201},
        date2[3]      = {28, 02, 1915};
 
+
+   int dateTest[3];
+   saisieDate(dateTest[0], dateTest[1], dateTest[2], carSeparation);
+   cout << "Votre date N°1 : " << dateTest[0] << carSeparation << dateTest[1] << carSeparation << dateTest[2];
    // Ce programme ...
-   cout << "Saisie date 1 : ";
-   //saisieDate(date1[0], date1[1], date1[2], carSeparation);
-   cout << endl << date1[0] << "|" << date1[1] << "|" << date1[2] << endl;
-   cout << endl << "Saisie date 2 : ";
-   //saisieDate(date2[0], date2[1], date2[2], carSeparation);
-   cout << endl << date2[0] << "|" << date2[1] << "|" << date2[2] << endl;
 
    cout << "Verification intervalle : " << endl;
    cout << dateEstComprise(DATE_MIN, DATE_MAX, date1) << endl;
