@@ -20,24 +20,25 @@ using namespace std;
 
 int main() {
 
-   const char   carSeparation = '-';
+   const char CAR_SEPARATION = '-';
 
-   const int DATE_MIN[] = {4, 5, 1910},
-             DATE_MAX[] = {31, 12, 2200};
+   const int  DATE_MIN[] = {4, 5, 1910},
+              DATE_MAX[] = {31, 12, 2200};
 
-   int date1[3]      = {15, 11, 2201},
-       date2[3]      = {28, 02, 1915};
+   int date1[3],
+       date2[3];
+   
+   // saisie et validation des dates de l'utilisateur
+   saisieDate(date1[0], date1[1], date1[2],'-',DATE_MIN, DATE_MAX);
+   saisieDate(date2[0], date2[1], date2[2],'-',DATE_MIN, DATE_MAX);
+
+   cout << "Premiere date : ";
+   afficherDate(date1, CAR_SEPARATION);
+   cout << endl << "Deuxieme date : ";
+   afficherDate(date2, CAR_SEPARATION);
 
 
-   int dateTest[3];
-   saisieDate(dateTest[0], dateTest[1], dateTest[2], carSeparation);
-   cout << "Votre date N°1 : " << dateTest[0] << carSeparation << dateTest[1] << carSeparation << dateTest[2];
    // Ce programme ...
-
-   cout << "Verification intervalle : " << endl;
-   cout << dateEstComprise(DATE_MIN, DATE_MAX, date1) << endl;
-   cout << dateEstComprise(DATE_MIN, DATE_MAX, date2) << endl;
-
    // Prendre Date
    // Vérifier Date
    // Calcul différence
