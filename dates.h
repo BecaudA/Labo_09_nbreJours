@@ -56,6 +56,8 @@ int differenceDate(const int DATE1[], const int DATE2[]);
  * @param DATE Date à convertir
  * @return La date en jours Julien
  * @details Convertie la date en nombre de jours écoulés depuis 01.01.-4712 à 12h00
+ * Source : https://fr.wikipedia.org/wiki/Jour_julien#Calendrier_gr.C3.A9gorien
+ *          https://quasar.as.utexas.edu/BillInfo/JulianDatesG.html
  */
 int conversionJoursJulien(const int DATE[]);
 

@@ -24,10 +24,15 @@ bool recommencer(const char& oui, const char& non) {
 
    // Boucle pour refaire la saisie en cas d'erreur
    do {
-      cout << "Souhaitez-vous recommencer [" << oui << '/' << non << " ] ? ";
+
+      // Saisie pour recommencer
+      cout << "Souhaitez-vous recommencer [" << oui << '/' << non << "] ? ";
       cin  >> reponse;
 
-   } while(reponse != oui or reponse != non);
+      // Vide le buffer
+      cin.ignore(numeric_limits<int>::max(),'\n');
+
+   } while(reponse != oui and reponse != non);
 
    return reponse == oui;
 }

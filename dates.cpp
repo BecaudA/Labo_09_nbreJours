@@ -28,11 +28,9 @@ void saisieDate(int date[], const int DATE_MIN[], const int DATE_MAX[], const ch
 
          // Si erreur du cin
          if (cin.fail()) {
-            cout << endl << "Une erreur est survenue lors de la lecture de la date saisie." << endl;
-
             cin.clear();
-            cin.ignore(numeric_limits<int>::max(),'\n');
             erreur = true;
+            break;
          }
          // Si i n'est pas égal à la dernière case du tableau
          else if(i != TAILLE_TABLEAU - 1){
@@ -40,8 +38,28 @@ void saisieDate(int date[], const int DATE_MIN[], const int DATE_MAX[], const ch
             cin.ignore(numeric_limits<int>::max(),CAR);
          }
       }// Fin boucle (2) For
+
+      // Vide le buffer
+      cin.ignore(numeric_limits<int>::max(),'\n');
+
+      // Message d'erreur pour date non-valide et en dehors des bornes
+      if(!validationDate(date)) {
+         cout << "/!\\ La date saisie n'est pas considere comme valide (format JJ" << CAR << "MM" << CAR << "AAAA)." << endl;
+         erreur = true;
+      } else if(!dateEstComprise(DATE_MIN, DATE_MAX, date)) {
+         cout << "/!\\ La date saisie n'est pas comprise dans l'intervalle [";
+         afficherDate(DATE_MIN);
+         cout << " a ";
+         afficherDate(DATE_MAX);
+         cout << "]." << endl;
+         erreur = true;
+      }
+
+      // Retour à la ligne pour la mise en page
+      cout << endl;
+
       // Vérifie s'il y a une eu erreur ou si la date n'est pas valide ou non-comprise entre les bornes
-   } while(erreur or !validationDate(date) or !dateEstComprise(DATE_MIN, DATE_MAX, date));
+   } while(erreur);
 }
 
 bool validationDate(const int DATE[]){
@@ -71,7 +89,6 @@ int nbJoursMax(const int& MOIS, const int& ANNEE){
    } else {
       // Soustrait 1 ou 0 à 31 en fonction du mois et l'affecte à nbJours
       // nbJours vaut soit 30 soit 31
-      // 
       return NB_JOURS_MAX - (MOIS - 1)% 7 % 2;
    }
 }
@@ -115,7 +132,6 @@ int conversionJoursJulien(const int DATE[]){
    e = 30.6001 * (mois  + 1);
 
    // L'algoritme donne toujours un demi-jours de trop  du à la date de référence qui est prise à 12h et non 0h
-   //
    return (int)(c + jour + d + e - 1524.5);
 }
 
