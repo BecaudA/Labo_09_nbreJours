@@ -7,7 +7,7 @@
 
 using namespace std;
 
-bool saisieDate(int& jour, int& mois, int& annee, const char& CAR, const int DATE_MIN[], const int DATE_MAX[]){
+void saisieDate(int& jour, int& mois, int& annee, const char& CAR, const int DATE_MIN[], const int DATE_MAX[]){
 
    bool erreur;
    int date[3];

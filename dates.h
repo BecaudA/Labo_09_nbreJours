@@ -2,17 +2,23 @@
 #define LABO_09_NBREJOURS_DATES_H
 
 /**
- * @brief
- * @param jours
- * @param mois
- * @param annee
- * @param CAR
- * @param DATE_MIN
- * @param DATE_MAX
+ * @brief Saisie une date
+ * @param jour Jour en retour
+ * @param mois Mois en retour
+ * @param annee Annee en retour
+ * @param CAR Caractere de separation
+ * @param DATE_MIN Date minimale a saisir
+ * @param DATE_MAX Date maximale a saisir
+ * @details Demande a l'utilisateur de sasair une date dans un format donnee.
+ *  La date est ensuite verifiee (format & borne).
+ */
+void saisieDate(int& jour, int& mois, int& annee, const char& CAR, const int DATE_MIN[], const int DATE_MAX[]);
+
+/**
+ * @brief Vérifie que la date donnée soit valide
+ * @param DATE Date à vérifier
  * @return
  */
-bool saisieDate(int& jours, int& mois, int& annee, const char& CAR, const int DATE_MIN[], const int DATE_MAX[]);
-
 bool validationDate(const int DATE[3]);
 
 bool estBissextile(const int& ANNEE);
