@@ -30,13 +30,15 @@ int main() {
 
 
    int dateTest[3];
-   saisieDate(dateTest[0], dateTest[1], dateTest[2], carSeparation);
+   //saisieDate(dateTest[0], dateTest[1], dateTest[2], carSeparation);
    cout << "Votre date N°1 : " << dateTest[0] << carSeparation << dateTest[1] << carSeparation << dateTest[2];
    // Ce programme ...
 
    cout << "Verification intervalle : " << endl;
    cout << dateEstComprise(DATE_MIN, DATE_MAX, date1) << endl;
    cout << dateEstComprise(DATE_MIN, DATE_MAX, date2) << endl;
+
+   cout << differenceDate(DATE_MIN, DATE_MAX);
 
    // Prendre Date
    // Vérifier Date
