@@ -7,15 +7,18 @@
 
 using namespace std;
 
-bool saisieDate(int& jours, int& mois, int& annee, const char& CAR){
+void saisieDate(int& jour, int& mois, int& annee, const char& CAR, const int DATE_MIN[], const int DATE_MAX[]){
 
    bool erreur;
-
    int date[3];
 
    // Boucle (1) de la saisie de la date
    do {
-      cout << "saisir la date : ";
+      cout << "Saisir une date entre "
+           << DATE_MIN[0] << CAR << DATE_MIN[1] << CAR << DATE_MIN[2]
+           << " et "
+           << DATE_MAX[0] << CAR << DATE_MAX[1] << CAR << DATE_MAX[2]
+           << " : ";
 
       // Reset l'erreur
       erreur = false;
@@ -33,15 +36,18 @@ bool saisieDate(int& jours, int& mois, int& annee, const char& CAR){
 
             // Si il y a eu une erreur on quitte la boucle (2) jour mois annee
             break;
-         } else if(i != sizeof(date) / sizeof(int) - 1){
+         }
+         // Test si dernier '-'
+         else if(i != sizeof(date) / sizeof(int) - 1){
+
             // Vide le buffer jusqu'au caractère choisie
             cin.ignore(numeric_limits<int>::max(),CAR);
          }
       }
-   } while(erreur);
+   } while(erreur or !validationDate(date) or !dateEstComprise(DATE_MIN, DATE_MAX, date));
 
    // retourne la date via les référencement
-   jours = date[0];
+   jour = date[0];
    mois  = date[1];
    annee = date[2];
 
@@ -123,3 +129,20 @@ int conversionJoursJulien(const int DATE[]){
 
    return (int)joursJulien;
 }
+
+void afficherDate(const int DATE[3], const char& CAR){
+
+   const char CAR_REMPLISSAGE = '0';
+   const int  LARGEUR_JOURS_MOIS = 2,
+              LARGEUR_ANNEE = 4;
+
+   // Affiche le jour et le mois avec un remplissage des vides
+   cout << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_JOURS_MOIS) << DATE[0] << CAR
+        << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_JOURS_MOIS) << DATE[1] << CAR;
+
+   // Initialise le remplissage sur 4 nombres si annee < 1000
+   if(DATE[2] < 1000)
+      cout << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_ANNEE);
+
+   // Affiche l'annee
+   cout << DATE[2];
