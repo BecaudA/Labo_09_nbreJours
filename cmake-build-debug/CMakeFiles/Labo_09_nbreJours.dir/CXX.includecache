@@ -6,27 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/Labo_09_Becaud_Egremy.cpp
+C:/Users/Arthur/Desktop/HEIG/INF1/GitHub/Labo_09_nbreJours/dates.cpp
 dates.h
-C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/dates.h
-iostream
--
-cstdlib
--
-
-C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/dates.cpp
-dates.h
-C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/dates.h
+C:/Users/Arthur/Desktop/HEIG/INF1/GitHub/Labo_09_nbreJours/dates.h
 iostream
 -
 limits
 -
 iomanip
 -
-cstdlib
--
-string
+math.h
 -
 
-C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/dates.h
+C:/Users/Arthur/Desktop/HEIG/INF1/GitHub/Labo_09_nbreJours/dates.h
+string
+-
 

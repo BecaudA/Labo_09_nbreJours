@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours
+CMAKE_SOURCE_DIR = C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Labo_09_nbreJours.dir/depend.make
@@ -58,42 +58,42 @@ include CMakeFiles/Labo_09_nbreJours.dir/flags.make
 
 CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.obj: CMakeFiles/Labo_09_nbreJours.dir/flags.make
 CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.obj: ../Labo_09_Becaud_Egremy.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Labo_09_nbreJours.dir\Labo_09_Becaud_Egremy.cpp.obj -c C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\Labo_09_Becaud_Egremy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Labo_09_nbreJours.dir\Labo_09_Becaud_Egremy.cpp.obj -c C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\Labo_09_Becaud_Egremy.cpp
 
 CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\Labo_09_Becaud_Egremy.cpp > CMakeFiles\Labo_09_nbreJours.dir\Labo_09_Becaud_Egremy.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\Labo_09_Becaud_Egremy.cpp > CMakeFiles\Labo_09_nbreJours.dir\Labo_09_Becaud_Egremy.cpp.i
 
 CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\Labo_09_Becaud_Egremy.cpp -o CMakeFiles\Labo_09_nbreJours.dir\Labo_09_Becaud_Egremy.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\Labo_09_Becaud_Egremy.cpp -o CMakeFiles\Labo_09_nbreJours.dir\Labo_09_Becaud_Egremy.cpp.s
 
 CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.obj: CMakeFiles/Labo_09_nbreJours.dir/flags.make
 CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.obj: ../dates.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Labo_09_nbreJours.dir\dates.cpp.obj -c C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\dates.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Labo_09_nbreJours.dir\dates.cpp.obj -c C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\dates.cpp
 
 CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\dates.cpp > CMakeFiles\Labo_09_nbreJours.dir\dates.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\dates.cpp > CMakeFiles\Labo_09_nbreJours.dir\dates.cpp.i
 
 CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Labo_09_nbreJours.dir/dates.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\dates.cpp -o CMakeFiles\Labo_09_nbreJours.dir\dates.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\dates.cpp -o CMakeFiles\Labo_09_nbreJours.dir\dates.cpp.s
 
 CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.obj: CMakeFiles/Labo_09_nbreJours.dir/flags.make
 CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.obj: ../annexe.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Labo_09_nbreJours.dir\annexe.cpp.obj -c C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\annexe.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Labo_09_nbreJours.dir\annexe.cpp.obj -c C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\annexe.cpp
 
 CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\annexe.cpp > CMakeFiles\Labo_09_nbreJours.dir\annexe.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\annexe.cpp > CMakeFiles\Labo_09_nbreJours.dir\annexe.cpp.i
 
 CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\annexe.cpp -o CMakeFiles\Labo_09_nbreJours.dir\annexe.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\annexe.cpp -o CMakeFiles\Labo_09_nbreJours.dir\annexe.cpp.s
 
 # Object files for target Labo_09_nbreJours
 Labo_09_nbreJours_OBJECTS = \
@@ -111,7 +111,7 @@ Labo_09_nbreJours.exe: CMakeFiles/Labo_09_nbreJours.dir/build.make
 Labo_09_nbreJours.exe: CMakeFiles/Labo_09_nbreJours.dir/linklibs.rsp
 Labo_09_nbreJours.exe: CMakeFiles/Labo_09_nbreJours.dir/objects1.rsp
 Labo_09_nbreJours.exe: CMakeFiles/Labo_09_nbreJours.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Labo_09_nbreJours.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Labo_09_nbreJours.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Labo_09_nbreJours.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +124,6 @@ CMakeFiles/Labo_09_nbreJours.dir/clean:
 .PHONY : CMakeFiles/Labo_09_nbreJours.dir/clean
 
 CMakeFiles/Labo_09_nbreJours.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\cmake-build-debug C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\cmake-build-debug C:\Users\egrem\Documents\HEIG-VD\S1\INF1\Labo_09_nbreJours\cmake-build-debug\CMakeFiles\Labo_09_nbreJours.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\cmake-build-debug C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\cmake-build-debug C:\Users\Arthur\Desktop\HEIG\INF1\GitHub\Labo_09_nbreJours\cmake-build-debug\CMakeFiles\Labo_09_nbreJours.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Labo_09_nbreJours.dir/depend
 

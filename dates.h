@@ -1,3 +1,4 @@
+#include <string> // string
 #ifndef LABO_09_NBREJOURS_DATES_H
 #define LABO_09_NBREJOURS_DATES_H
 
@@ -11,6 +12,13 @@
  *  La date est ensuite vérifiée (format & borne).
  */
 void saisieDate(int date[], const int DATE_MIN[], const int DATE_MAX[], const char& CAR = '-');
+
+/**
+ * @brief Vérifie si la chaine est constituée uniquement de chiffre
+ * @param CHAINE Chaine de caractère à vérifier
+ * @return Un bool indiquant true : entier / false : pas un entier
+ */
+bool estUnEntier(const std::string& CHAINE);
 
 /**
  * @brief Vérifie que la date donnée soit valide
