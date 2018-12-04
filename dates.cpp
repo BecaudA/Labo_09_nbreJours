@@ -7,18 +7,15 @@
 
 using namespace std;
 
-bool saisieDate(int& jour, int& mois, int& annee, const char& CAR, const int DATE_MIN[], const int DATE_MAX[]){
+bool saisieDate(int& jours, int& mois, int& annee, const char& CAR){
 
    bool erreur;
+
    int date[3];
 
    // Boucle (1) de la saisie de la date
    do {
-      cout << "Saisir une date entre "
-           << DATE_MIN[0] << CAR << DATE_MIN[1] << CAR << DATE_MIN[2]
-           << " et "
-           << DATE_MAX[0] << CAR << DATE_MAX[1] << CAR << DATE_MAX[2]
-           << " : ";
+      cout << "saisir la date : ";
 
       // Reset l'erreur
       erreur = false;
@@ -36,18 +33,15 @@ bool saisieDate(int& jour, int& mois, int& annee, const char& CAR, const int DAT
 
             // Si il y a eu une erreur on quitte la boucle (2) jour mois annee
             break;
-         }
-         // Test si dernier '-'
-         else if(i != sizeof(date) / sizeof(int) - 1){
-
+         } else if(i != sizeof(date) / sizeof(int) - 1){
             // Vide le buffer jusqu'au caractère choisie
             cin.ignore(numeric_limits<int>::max(),CAR);
          }
       }
-   } while(erreur or !validationDate(date) or !dateEstComprise(DATE_MIN, DATE_MAX, date));
+   } while(erreur);
 
    // retourne la date via les référencement
-   jour = date[0];
+   jours = date[0];
    mois  = date[1];
    annee = date[2];
 
@@ -151,22 +145,4 @@ int differenceDate(const int DATE1[3], const int DATE2[3]){
 
       nbJoursTotal += nbAnneeBissextiles * NB_JOURS_ANNEE_BISSEXTILE + nbAnneeNonBissextile * NB_JOURS_ANNEE_NON_BISSEXTILE;
    }
-}
-
-void afficherDate(const int DATE[3], const char& CAR){
-
-   const char CAR_REMPLISSAGE = '0';
-   const int  LARGEUR_JOURS_MOIS = 2,
-              LARGEUR_ANNEE = 4;
-
-   // Affiche le jour et le mois avec un remplissage des vides
-   cout << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_JOURS_MOIS) << DATE[0] << CAR
-        << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_JOURS_MOIS) << DATE[1] << CAR;
-
-   // Initialise le remplissage sur 4 nombres si annee < 1000
-   if(DATE[2] < 1000)
-      cout << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_ANNEE);
-
-   // Affiche l'annee
-   cout << DATE[2];
 }
