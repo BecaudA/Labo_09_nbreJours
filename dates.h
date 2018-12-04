@@ -7,8 +7,8 @@
  * @param DATE_MIN Date minimale à saisir
  * @param DATE_MAX Date maximale à saisir
  * @param CAR Caractère de separation (par défaut : '-')
- * @details Demande a l'utilisateur de saisir une date dans un format JJ-MM-AAAA.
- *  La date est ensuite verifiée (format & borne).
+ * @details Demande à l'utilisateur de saisir une date dans un format JJ-MM-AAAA.
+ *  La date est ensuite vérifiée (format & borne).
  */
 void saisieDate(int date[], const int DATE_MIN[], const int DATE_MAX[], const char& CAR = '-');
 
@@ -27,10 +27,10 @@ bool validationDate(const int DATE[]);
 bool estBissextile(const int& ANNEE);
 
 /**
- * @brief Calcul le nombre de jours d'un mois
- * @param MOIS Mois à calculer
- * @param ANNEE Annee à calculer
- * @return Nombre de jours du mois donné
+ * @brief Calcul le nombre de jours maximum d'un mois
+ * @param MOIS Mois
+ * @param ANNEE Annee
+ * @return Nombre de jours maximum du mois donné
  */
 int nbJoursMax(const int& MOIS, const int& ANNEE);
 
@@ -38,7 +38,7 @@ int nbJoursMax(const int& MOIS, const int& ANNEE);
  * @brief Vérifie si la date donnée est comprise entre deux dates
  * @param DATE_MIN Date minimale
  * @param DATE_MAX Date maximale
- * @param DATE Date à testé
+ * @param DATE Date à tester
  * @return Un bool indiquant true : comprise / false : non-comprise
  */
 bool dateEstComprise(const int DATE_MIN[], const int DATE_MAX[], const int DATE[]);
@@ -52,10 +52,10 @@ bool dateEstComprise(const int DATE_MIN[], const int DATE_MAX[], const int DATE[
 int differenceDate(const int DATE1[], const int DATE2[]);
 
 /**
- * @brief Convertie une date grégorienne en Julienne
+ * @brief Convertie une date grégorienne en jours Julien
  * @param DATE Date à convertir
- * @return La date en jours Juilien
- * @details
+ * @return La date en jours Julien
+ * @details Convertie la date en nombre de jours écoulés depuis 01.01.-4712 à 12h00
  */
 int conversionJoursJulien(const int DATE[]);
 

@@ -85,6 +85,12 @@
 		<Unit filename="C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/Labo_09_Becaud_Egremy.cpp">
 			<Option target="Labo_09_nbreJours"/>
 		</Unit>
+		<Unit filename="C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/annexe.cpp">
+			<Option target="Labo_09_nbreJours"/>
+		</Unit>
+		<Unit filename="C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/annexe.h">
+			<Option target="Labo_09_nbreJours"/>
+		</Unit>
 		<Unit filename="C:/Users/egrem/Documents/HEIG-VD/S1/INF1/Labo_09_nbreJours/dates.cpp">
 			<Option target="Labo_09_nbreJours"/>
 		</Unit>

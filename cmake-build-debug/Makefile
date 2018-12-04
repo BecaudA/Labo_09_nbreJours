@@ -149,6 +149,33 @@ Labo_09_Becaud_Egremy.cpp.s:
 	$(MAKE) -f CMakeFiles\Labo_09_nbreJours.dir\build.make CMakeFiles/Labo_09_nbreJours.dir/Labo_09_Becaud_Egremy.cpp.s
 .PHONY : Labo_09_Becaud_Egremy.cpp.s
 
+annexe.obj: annexe.cpp.obj
+
+.PHONY : annexe.obj
+
+# target to build an object file
+annexe.cpp.obj:
+	$(MAKE) -f CMakeFiles\Labo_09_nbreJours.dir\build.make CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.obj
+.PHONY : annexe.cpp.obj
+
+annexe.i: annexe.cpp.i
+
+.PHONY : annexe.i
+
+# target to preprocess a source file
+annexe.cpp.i:
+	$(MAKE) -f CMakeFiles\Labo_09_nbreJours.dir\build.make CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.i
+.PHONY : annexe.cpp.i
+
+annexe.s: annexe.cpp.s
+
+.PHONY : annexe.s
+
+# target to generate assembly for a file
+annexe.cpp.s:
+	$(MAKE) -f CMakeFiles\Labo_09_nbreJours.dir\build.make CMakeFiles/Labo_09_nbreJours.dir/annexe.cpp.s
+.PHONY : annexe.cpp.s
+
 dates.obj: dates.cpp.obj
 
 .PHONY : dates.obj
@@ -188,6 +215,9 @@ help:
 	@echo ... Labo_09_Becaud_Egremy.obj
 	@echo ... Labo_09_Becaud_Egremy.i
 	@echo ... Labo_09_Becaud_Egremy.s
+	@echo ... annexe.obj
+	@echo ... annexe.i
+	@echo ... annexe.s
 	@echo ... dates.obj
 	@echo ... dates.i
 	@echo ... dates.s

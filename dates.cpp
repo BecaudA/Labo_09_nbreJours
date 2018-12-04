@@ -1,14 +1,13 @@
 #include "dates.h"
-#include <iostream>
-#include <limits>
-#include <iomanip>
-#include <cstdlib>
-#include <string>
+#include <iostream>  // cout, cin
+#include <limits>    // numeric_limits
+#include <iomanip>   // setw(), setfill()
+#include <string>    // string
+#include <math.h>    // trunc()
 
 using namespace std;
 
 void saisieDate(int date[], const int DATE_MIN[], const int DATE_MAX[], const char& CAR){
-
    const int TAILLE_TABLEAU = 3;
    bool erreur;
 
@@ -29,22 +28,19 @@ void saisieDate(int date[], const int DATE_MIN[], const int DATE_MAX[], const ch
 
          // Si erreur du cin
          if (cin.fail()) {
+            cout << endl << "Une erreur est survenue lors de la lecture de la date saisie." << endl;
+
             cin.clear();
-            erreur = true;
-            cout << endl << "Une erreur est survenue lors de la lecture de la date donnee." << endl;
             cin.ignore(numeric_limits<int>::max(),'\n');
-
-            // Si il y a eu une erreur on quitte la boucle (2) jour mois annee
-            break;
+            erreur = true;
          }
-         // Si pas égal à la dernière case du tableau
+         // Si i n'est pas égal à la dernière case du tableau
          else if(i != TAILLE_TABLEAU - 1){
-
             // Vide le buffer jusqu'au caractère de séparation
             cin.ignore(numeric_limits<int>::max(),CAR);
          }
-      }
-      // Vérifie s'il y a une erreur, si la date est valide et comprise dans les bornes
+      }// Fin boucle (2) For
+      // Vérifie s'il y a une eu erreur ou si la date n'est pas valide ou non-comprise entre les bornes
    } while(erreur or !validationDate(date) or !dateEstComprise(DATE_MIN, DATE_MAX, date));
 }
 
@@ -57,12 +53,11 @@ bool validationDate(const int DATE[]){
    return !(DATE[1] < MOIS_MIN or DATE[1] > MOIS_MAX or DATE[0] < JOUR_MIN or DATE[0] > nbJoursMax(DATE[1], DATE[2]));
 }
 
-//Renvoie le nombre de jours max pour un mois donné d'une année donnée
 int nbJoursMax(const int& MOIS, const int& ANNEE){
-   const int NB_JOURS_FEVRIER_BISSEXTILE        = 29,
-             NB_JOURS_FEVRIER_NON_BISSEXTILE    = 28,
-             NB_JOURS_MAX                       = 31,
-             FEVRIER                            = 2;
+   const int NB_JOURS_FEVRIER_BISSEXTILE     = 29,
+             NB_JOURS_FEVRIER_NON_BISSEXTILE = 28,
+             NB_JOURS_MAX                    = 31,
+             FEVRIER                         = 2;
 
    if(MOIS == FEVRIER) {
       // Si l'année est bissextile
@@ -76,6 +71,7 @@ int nbJoursMax(const int& MOIS, const int& ANNEE){
    } else {
       // Soustrait 1 ou 0 à 31 en fonction du mois et l'affecte à nbJours
       // nbJours vaut soit 30 soit 31
+      // 
       return NB_JOURS_MAX - (MOIS - 1)% 7 % 2;
    }
 }
@@ -99,15 +95,13 @@ int differenceDate(const int DATE1[], const int DATE2[]){
 }
 
 int conversionJoursJulien(const int DATE[]){
-   //
-   // Convertie la date du calendrier Grégorien en nombre de jours Julien
-   //
-   int jour = DATE[0],
-       mois = DATE[1],
+   int jour  = DATE[0],
+       mois  = DATE[1],
        annee = DATE[2];
 
-   int a, b, c;
-   double d, e, joursJulien;
+   //Variables de calculs intermédiaires
+   int    a, b, c;
+   double    d, e;
 
    if(mois == 1 or mois == 2){
       annee--;
@@ -115,14 +109,14 @@ int conversionJoursJulien(const int DATE[]){
    }
 
    a = annee / 100;
-   b = a/4;
-   c = 2-a+b;
-   d = 365.25 * (annee + 4716);
-   e = 30.6001 *(mois + 1);
+   b = a     / 4;
+   c = 2 - a + b;
+   d = 365.25  * (annee + 4716);
+   e = 30.6001 * (mois  + 1);
 
-   joursJulien =  c + jour + d + e - 1524.5;
-
-   return (int)joursJulien;
+   // L'algoritme donne toujours un demi-jours de trop  du à la date de référence qui est prise à 12h et non 0h
+   //
+   return (int)(c + jour + d + e - 1524.5);
 }
 
 

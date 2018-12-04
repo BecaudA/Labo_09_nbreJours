@@ -1,7 +1,8 @@
-#include <iostream>
-#include <limits>
 #include "annexe.h"
 #include "dates.h"
+#include <iostream>  // cout, cin
+#include <limits>    //numeric_limits
+
 
 using namespace std;
 
@@ -24,7 +25,7 @@ bool recommencer(const char& oui, const char& non) {
    // Boucle pour refaire la saisie en cas d'erreur
    do {
       cout << "Souhaitez-vous recommencer [" << oui << '/' << non << " ] ? ";
-      cin >> reponse;
+      cin  >> reponse;
 
    } while(reponse != oui or reponse != non);
 

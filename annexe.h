@@ -15,14 +15,14 @@ void affichageResultat(const int DATE1[], const int DATE2[]);
 
 /**
  * @brief Message et saisie pour recommencer un service
- * @param oui Caractère indiquant oui
- * @param non Caractère indiquant non
+ * @param OUI Caractère indiquant oui
+ * @param NON Caractère indiquant non
  * @return Un bool indiquant true : oui / false : non
  */
-bool recommencer(const char& oui, const char& non);
+bool recommencer(const char& OUI, const char& NON);
 
 /**
- * @brief Message pour quitte le programme
+ * @brief Message pour quitter le programme
  */
 void quitterProgramme();
 
