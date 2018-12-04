@@ -28,6 +28,9 @@ int main() {
    const int  DATE_MIN[] = {01, 01, 1900},
               DATE_MAX[] = {31, 12, 2200};
 
+   const char OUI        = 'O',
+              NON        = 'N';
+
    int date1[3],
        date2[3];
 
@@ -44,7 +47,7 @@ int main() {
       // Affiche le nombre de jours séparant les deux dates
       affichageResultat(date1, date2);
 
-   } while(recommencer('O', 'N'));
+   } while(recommencer(OUI,NON));
 
    // Fin du programme
    quitterProgramme();

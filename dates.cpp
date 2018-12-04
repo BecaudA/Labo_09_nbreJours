@@ -2,46 +2,93 @@
 #include <iostream>  // cout, cin
 #include <limits>    // numeric_limits
 #include <iomanip>   // setw(), setfill()
-#include <string>    // string
 #include <math.h>    // trunc()
 
 using namespace std;
 
 void saisieDate(int date[], const int DATE_MIN[], const int DATE_MAX[], const char& CAR){
-   const int TAILLE_TABLEAU = 3;
-   bool erreur;
+   const int TAILLE_JOUR_MOIS = 2,
+             TAILLE_ANNEE     = 4,
+             POS_JOUR         = 0,
+             POS_MOIS         = 3,
+             POS_ANNEE        = 6;
+
+   string    jour,
+             mois,
+             annee,
+             saisieDate;
+
+   bool      erreur;
 
    // Boucle (1) de la saisie de la date
    do {
+      // Reset de l'erreur
+      erreur = false;
+
+      // Demande de saisie
       cout << "Saisir une date entre ";
       afficherDate(DATE_MIN);
       cout << " et ";
       afficherDate(DATE_MAX);
       cout << " : ";
 
-      // Reset l'erreur
-      erreur = false;
+      // Récupère la saisie
+      getline(cin, saisieDate);
 
-      // Boucle (2) pour entrer jour mois annee
-      for (unsigned i = 0; i < TAILLE_TABLEAU; ++i) {
-         cin >> date[i];
+      // Si taille de la saisie fait 10 caractères et que les séparateur sont aux bonnes positions
+      if(    saisieDate.size() == POS_ANNEE + TAILLE_ANNEE
+         and saisieDate.substr(POS_JOUR + TAILLE_JOUR_MOIS, 1) == string(1,CAR)
+         and saisieDate.substr(POS_MOIS + TAILLE_JOUR_MOIS, 1) == string(1,CAR)) {
 
-         // Si erreur du cin
-         if (cin.fail()) {
-            cout << endl << "Une erreur est survenue lors de la lecture de la date saisie." << endl;
+         // Sort les caractères constituant jours mois année
+         jour  = saisieDate.substr(POS_JOUR,  TAILLE_JOUR_MOIS);
+         mois  = saisieDate.substr(POS_MOIS,  TAILLE_JOUR_MOIS);
+         annee = saisieDate.substr(POS_ANNEE, TAILLE_ANNEE);
 
-            cin.clear();
-            cin.ignore(numeric_limits<int>::max(),'\n');
+         // Vérifie que jour mois annee sont consitituées uniquement de chiffre
+         if(estUnEntier(jour) and estUnEntier(mois) and estUnEntier(annee)) {
+
+            // Peuple le tableau date
+            date[0] = (unsigned)stoi(jour);
+            date[1] = (unsigned)stoi(mois);
+            date[2] = (unsigned)stoi(annee);
+
+            // Message d'erreur pour date non-valide et en dehors des bornes
+            if(!validationDate(date)) {
+               cout << "/!\\ La date saisie n'existe pas." << endl;
+               erreur = true;
+            } else if(!dateEstComprise(DATE_MIN, DATE_MAX, date)) {
+               cout << "/!\\ La date saisie n'est pas comprise dans l'intervalle [";
+               afficherDate(DATE_MIN);
+               cout << " a ";
+               afficherDate(DATE_MAX);
+               cout << "]." << endl;
+               erreur = true;
+            }
+         } else {
+            cout << "/!\\ La date saisie n'est pas constituee d'entier." << endl;
             erreur = true;
          }
-         // Si i n'est pas égal à la dernière case du tableau
-         else if(i != TAILLE_TABLEAU - 1){
-            // Vide le buffer jusqu'au caractère de séparation
-            cin.ignore(numeric_limits<int>::max(),CAR);
-         }
-      }// Fin boucle (2) For
+      } else {
+         cout << "/!\\ La date saisie n'est pas au bon format JJ" << CAR << "MM" << CAR << "AAAA." << endl;
+         erreur = true;
+      }
+
+      // Retour à la ligne pour la mise en page
+      cout << endl;
+
       // Vérifie s'il y a une eu erreur ou si la date n'est pas valide ou non-comprise entre les bornes
-   } while(erreur or !validationDate(date) or !dateEstComprise(DATE_MIN, DATE_MAX, date));
+   } while(erreur);
+}
+
+bool estUnEntier(const string& CHAINE){
+   // Détermine que chaque caractère soit un chiffre
+   for(char c : CHAINE) {
+      if(c < '0' or c > '9') {
+         return false;
+      }
+   }
+   return true;
 }
 
 bool validationDate(const int DATE[]){
@@ -71,7 +118,6 @@ int nbJoursMax(const int& MOIS, const int& ANNEE){
    } else {
       // Soustrait 1 ou 0 à 31 en fonction du mois et l'affecte à nbJours
       // nbJours vaut soit 30 soit 31
-      // 
       return NB_JOURS_MAX - (MOIS - 1)% 7 % 2;
    }
 }
@@ -115,7 +161,6 @@ int conversionJoursJulien(const int DATE[]){
    e = 30.6001 * (mois  + 1);
 
    // L'algoritme donne toujours un demi-jours de trop  du à la date de référence qui est prise à 12h et non 0h
-   //
    return (int)(c + jour + d + e - 1524.5);
 }
 

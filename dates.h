@@ -1,3 +1,4 @@
+#include <string> // string
 #ifndef LABO_09_NBREJOURS_DATES_H
 #define LABO_09_NBREJOURS_DATES_H
 
@@ -11,6 +12,13 @@
  *  La date est ensuite vérifiée (format & borne).
  */
 void saisieDate(int date[], const int DATE_MIN[], const int DATE_MAX[], const char& CAR = '-');
+
+/**
+ * @brief Vérifie si la chaine est constituée uniquement de chiffre
+ * @param CHAINE Chaine de caractère à vérifier
+ * @return Un bool indiquant true : entier / false : pas un entier
+ */
+bool estUnEntier(const std::string& CHAINE);
 
 /**
  * @brief Vérifie que la date donnée soit valide
@@ -56,6 +64,8 @@ int differenceDate(const int DATE1[], const int DATE2[]);
  * @param DATE Date à convertir
  * @return La date en jours Julien
  * @details Convertie la date en nombre de jours écoulés depuis 01.01.-4712 à 12h00
+ * Source : https://fr.wikipedia.org/wiki/Jour_julien#Calendrier_gr.C3.A9gorien
+ *          https://quasar.as.utexas.edu/BillInfo/JulianDatesG.html
  */
 int conversionJoursJulien(const int DATE[]);
 
