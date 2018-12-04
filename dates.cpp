@@ -46,12 +46,10 @@ void saisieDate(int& jour, int& mois, int& annee, const char& CAR, const int DAT
       }
    } while(erreur or !validationDate(date) or !dateEstComprise(DATE_MIN, DATE_MAX, date));
 
-   // retourne la date via les référencement
+   // Retourne la date via les référencement
    jour = date[0];
    mois  = date[1];
    annee = date[2];
-
-   return true;
 }
 
 bool validationDate(const int DATE[]){
@@ -130,19 +128,20 @@ int conversionJoursJulien(const int DATE[]){
    return (int)joursJulien;
 }
 
-void afficherDate(const int DATE[3], const char& CAR){
+void afficherDate(const int DATE[3], const char& CAR) {
 
    const char CAR_REMPLISSAGE = '0';
-   const int  LARGEUR_JOURS_MOIS = 2,
-              LARGEUR_ANNEE = 4;
+   const int LARGEUR_JOURS_MOIS = 2,
+      LARGEUR_ANNEE = 4;
 
    // Affiche le jour et le mois avec un remplissage des vides
    cout << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_JOURS_MOIS) << DATE[0] << CAR
         << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_JOURS_MOIS) << DATE[1] << CAR;
 
    // Initialise le remplissage sur 4 nombres si annee < 1000
-   if(DATE[2] < 1000)
+   if (DATE[2] < 1000)
       cout << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_ANNEE);
 
    // Affiche l'annee
    cout << DATE[2];
+}
