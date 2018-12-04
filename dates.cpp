@@ -54,7 +54,7 @@ void saisieDate(int& jour, int& mois, int& annee, const char& CAR, const int DAT
    return true;
 }
 
-bool validationDate(const int DATE[3]){
+bool validationDate(const int DATE[]){
    const int MOIS_MIN = 1,
              MOIS_MAX = 12,
              JOUR_MIN = 1;
@@ -90,67 +90,44 @@ bool estBissextile(const int& ANNEE){
    return ANNEE % 400 == 0 or (ANNEE % 100 != 0 and ANNEE % 4 == 0);
 }
 
-bool dateEstComprise(const int DATE_MIN[3], const int DATE_MAX[3], const int DATE[3]){
+bool dateEstComprise(const int DATE_MIN[], const int DATE_MAX[], const int DATE[]){
    if(validationDate(DATE)) {
-      return (plusGrandeOuEgale(DATE, DATE_MIN) and plusPetiteOuEgale(DATE, DATE_MAX));
-   }
-}
-
-bool plusPetiteOuEgale(const int DATE[3], const int DATE_REF[3]){
-   if(DATE[2] < DATE_REF[2]){
-      return true;
-   } else if(DATE[2] == DATE_REF[2]){
-      if(DATE[1] < DATE_REF[1]){
-         return true;
-      } else if(DATE[1] == DATE_REF[1]){
-         return DATE[0] <= DATE_REF[0];
-      } else {
-         return false;
-      }
-   } else {
-      return false;
-   }
-}
-
-bool plusGrandeOuEgale(const int DATE[3], const int DATE_REF[3]){
-   if(DATE[2] > DATE_REF[2]){
-      return true;
-   } else if(DATE[2] == DATE_REF[2]){
-      if(DATE[1] > DATE_REF[1]){
-         return true;
-      } else if(DATE[1] == DATE_REF[1]){
-         return DATE[0] >= DATE_REF[0];
-      } else {
-         return false;
-      }
-   } else {
-      return false;
+      return (conversionJoursJulien(DATE)>= conversionJoursJulien(DATE_MIN)
+              and
+              conversionJoursJulien(DATE) <= conversionJoursJulien(DATE_MAX));
    }
 }
 
 //Renvoie le nombre de jours qui sépare 2 dates
-int differenceDate(const int DATE1[3], const int DATE2[3]){
-   const int NB_JOURS_ANNEE_BISSEXTILE     = 366,
-             NB_JOURS_ANNEE_NON_BISSEXTILE = 365;
+int differenceDate(const int DATE1[], const int DATE2[]){
+   return conversionJoursJulien(DATE2) - conversionJoursJulien(DATE1);
 
-   int anneeIntermediaire     = DATE1[2],
-       nbAnneeNonBissextile = 0,
-       nbAnneeBissextiles   = 0,
-       nbJoursTotal           = 0;
+}
 
-   // Pas sûr que ce soit 1, peut être 2
-   if((DATE2[2] - DATE1[2] >= 1)){
-      if(!(estBissextile(anneeIntermediaire))){
-         do{
-            nbAnneeNonBissextile++;
-            anneeIntermediaire++;
-         }while(!(estBissextile(anneeIntermediaire)));
-      }
-      nbAnneeBissextiles   += (DATE2[2] - anneeIntermediaire) / 4;
-      nbAnneeNonBissextile += DATE2[2] - anneeIntermediaire - nbAnneeBissextiles;
+//convertie la date du calendrier Grégorien en nombre de jours Julien
+int conversionJoursJulien(const int DATE[]){
 
-      nbJoursTotal += nbAnneeBissextiles * NB_JOURS_ANNEE_BISSEXTILE + nbAnneeNonBissextile * NB_JOURS_ANNEE_NON_BISSEXTILE;
+   int jour = DATE[0],
+       mois = DATE[1],
+       annee = DATE[2];
+
+   int a, b, c;
+   double d, e, joursJulien;
+
+   if(mois == 1 or mois == 2){
+      annee--;
+      mois += 12;
    }
+
+   a = annee / 100;
+   b = a/4;
+   c = 2-a+b;
+   d = 365.25 * (annee + 4716);
+   e = 30.6001 *(mois + 1);
+
+   joursJulien =  c + jour + d + e - 1524.5;
+
+   return (int)joursJulien;
 }
 
 void afficherDate(const int DATE[3], const char& CAR){
@@ -169,4 +146,3 @@ void afficherDate(const int DATE[3], const char& CAR){
 
    // Affiche l'annee
    cout << DATE[2];
-}
