@@ -125,20 +125,21 @@ int conversionJoursJulien(const int DATE[]){
    return (int)joursJulien;
 }
 
+
 void afficherDate(const int DATE[], const char& CAR) {
 
-   const char CAR_REMPLISSAGE = '0';
-   const int LARGEUR_JOURS_MOIS = 2,
-           LARGEUR_ANNEE = 4;
+   const char CAR_REMPLISSAGE    = '0';
+   const int  LARGEUR_JOURS_MOIS = 2,
+              LARGEUR_ANNEE      = 4;
 
    // Affiche le jour et le mois avec un remplissage des vides
    cout << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_JOURS_MOIS) << DATE[0] << CAR
         << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_JOURS_MOIS) << DATE[1] << CAR;
 
-   // Initialise le remplissage sur 4 nombres si annee < 1000
+   // Initialise le remplissage sur 4 nombres si année < 1000
    if (DATE[2] < 1000)
       cout << setfill(CAR_REMPLISSAGE) << setw(LARGEUR_ANNEE);
 
-   // Affiche l'annee
+   // Affiche l'année
    cout << DATE[2];
 }
