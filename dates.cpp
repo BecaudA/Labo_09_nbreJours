@@ -49,6 +49,7 @@ void saisieDate(int date[], const int DATE_MIN[], const int DATE_MAX[], const ch
          if(estUnEntier(jour) and estUnEntier(mois) and estUnEntier(annee)) {
 
             // Peuple le tableau date
+            //stoi : string TO Integer
             date[0] = (unsigned)stoi(jour);
             date[1] = (unsigned)stoi(mois);
             date[2] = (unsigned)stoi(annee);
